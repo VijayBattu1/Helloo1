@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<div id="div_id">
+	<span>In div parameter</span>
+	<h2>This is h2</h2>
+	<p>This is div paragraph</p>
+</div>
+
+<div id="div_id">
+	<span>33</span>
+	<h2>This is h2</h2>
+	<p>This is div paragraph</p>
+</div>
+
+<script>
+
+    // create document fragment
+	let df = document.createDocumentFragment();
+
+	// create h2 element node
+	var hNode = document.createElement("h2");
+
+		// create p element node
+	var pNode = document.createElement("p");
+
+	// add text in element node  using textContent property
+	// hNode.textContent= "This is head node";
+	// pNode.textContent = "This is p content";
+
+
+	// add text in element node using text node
+	var pcon = document.createTextNode("This is p content");
+	var hcon = document.createTextNode("This is head node");
+
+	// add text in element node using comment node
+	// var pcon = document.createComment("This is p content");
+
+
+	hNode.appendChild(hcon)
+	pNode.appendChild(pcon)
+
+	console.log(hNode);
+	console.log(pNode);
+
+	df.appendChild(hNode);
+	df.appendChild(pNode);
+
+	var div_data = document.getElementById("div_id");
+
+	div_data.appendChild(df)
+
+	// after moving content df will be empty
+	console.log(df);
+
+
+
+</script>
+</body>
+</html>
